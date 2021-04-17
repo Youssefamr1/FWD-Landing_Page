@@ -47,6 +47,10 @@ navCreate();
 
 
 // Add class 'active' to section when near top of viewport
+function sectionsActivate(item){
+    let sectionLocation=item.getBoundingClientRect();
+    return (sectionLocation.top >=0);
+}
 
 // Scroll to anchor ID using scrollTO event
 
@@ -62,10 +66,6 @@ navCreate();
 // Scroll to section on link click
 
 // Set sections as active
-function sectionsActivate(item){
-    let sectionLocation=item.getBoundingClientRect();
-    return (sectionLocation.top >=0);
-}
 
 function togleActiveClass(){
     for (section of sections){
